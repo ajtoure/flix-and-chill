@@ -65,6 +65,9 @@ app.randomPic = (dataResponse) => {
     let totalHits = dataResponse.total;
     //obtain array
     let results = dataResponse.hits;
+    for (i = 0; i < 20; i++) {
+        app.imgArray.push(dataResponse.hits[i]);
+    }
     //as long as the array container has fewer items than the total amount of hits...
     /*while (app.imgArray.length < totalHits) {
         // we will pick a random index number within the limits of how many hits we received
@@ -78,7 +81,7 @@ app.randomPic = (dataResponse) => {
         return app.imgArray;
     }*/
 
-    console.log(dataResponse[0]);
+    console.log(app.imgArray);
 }
 
 

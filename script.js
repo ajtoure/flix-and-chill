@@ -1,21 +1,21 @@
-//creating the app object
-const dateApp = {};
+//creating the app namespace
+const app = {};
 
 //creating the url and key variables and namespacing them to the app object
-dateApp.apiUrl = "https://pixabay.com/api/";
-dateApp.apiKey = "20890385-997b58abe422f53e03d97cdbf";
+app.imgApiUrl = "https://pixabay.com/api/";
+app.imgApiKey = "20890385-997b58abe422f53e03d97cdbf";
 
 //where we will store the img array response
-dateApp.imgArray = [];
-dateApp.selectedPic = {};
+app.imgArray = [];
+app.selectedPic = {};
 
 //create a method to get the dataset from the api
-dateApp.getPics = () => {
+app.getPics = () => {
     //here we use the URL constructor to use our URL and set our search parameters to include in our endpoint
-    const url = new URL(dateApp.apiUrl);
+    const url = new URL(app.imgApiUrl);
     url.search = new URLSearchParams({
         //passing in the api key
-        key: dateApp.apiKey,
+        key: app.imgApiKey,
         //test query
         q: "toronto",
         //only one page of results
@@ -33,18 +33,18 @@ dateApp.getPics = () => {
             return jsonResponse;
         })
         .then((finalResponse) => {
-            dateApp.randomPic(finalResponse);
+            app.randomPic(finalResponse);
         })
 }
 
-console.log(dateApp.selectedPic);
+console.log(app.selectedPic);
 
 
 
 
 
 // here will be our function to display the img
-dateApp.showPics = (picData) => {
+app.showPics = (picData) => {
     // querying the doc and find the first div
     const divOne = document.getElementsByClassName('localOne');
     // query to find the second div
@@ -60,22 +60,22 @@ dateApp.showPics = (picData) => {
 
 
 // function to obtain random img, it will iterate through the query result array
-dateApp.randomPic = (dataResponse) => {
+app.randomPic = (dataResponse) => {
     //obtain total amount of hits
     let totalHits = dataResponse.total;
     //obtain array
     let results = dataResponse.hits;
     //as long as the array container has fewer items than the total amount of hits...
-    while (dateApp.imgArray.length < totalHits) {
+    while (app.imgArray.length < totalHits) {
         // we will pick a random index number within the limits of how many hits we received
         let i = Math.floor(Math.random() * totalHits);
         // we will push these results to the array until we have ten items
-        if (dateApp.imgArray < 10) {
+        if (app.imgArray < 10) {
             // here we are, pushing the results onto the globally declared array variable
-            dateApp.imgArray.push = results[i];
+            app.imgArray.push = results[i];
         }
         // we return the new array
-        return dateApp.imgArray;
+        return app.imgArray;
     }
 
     console.log(results[0]);
@@ -85,15 +85,74 @@ dateApp.randomPic = (dataResponse) => {
 
 
 //creating an init method
-dateApp.init = () => {
-    //first the function that gets pics
-    dateApp.getPics();
-    //then the function that queries the images with the user location input
-    //then the function that selects a random one out of the results
-    //then a function to insert that result into the img element
-    //dateApp.resultTotal = dateApp.getPics.data[0].total;
-    //console.log(dateApp.resultTotal);
+//dateApp.init = () => {
+//first the function that gets pics
+//dateApp.getPics();
+//then the function that queries the images with the user location input
+//then the function that selects a random one out of the results
+//then a function to insert that result into the img element
+//dateApp.resultTotal = dateApp.getPics.data[0].total;
+//console.log(dateApp.resultTotal);
+//}
+/////////////////////////////////////////////////
+////// ALL THE MOVIE CODE WILL GO HERE //////////
+/////////////////////////////////////////////////
+
+
+
+// movie api keys
+app.apiKey = "3e2bae0bdf207133adb310d92315a2ec";
+app.apiMovie = "https://api.themoviedb.org/3/movie/popular"
+
+// gets the movies to display based on a popular list
+app.getMovie = () => {
+    for (let i = 1; i <= 20; i++) {
+        const movieUrl = new URL(app.apiMovie);
+        movieUrl.search = new URLSearchParams({
+            api_key: app.apiKey,
+            page: i
+        })
+        fetch(movieUrl)
+            .then((x) => {
+                return x.json();
+            })
+            .then((list0fMovies) => {
+                app.displayMovies(list0fMovies.results);
+            })
+    }
 }
 
-//calling our init method to start the app
-dateApp.init();
+//Get the data of the movie and populates options dropdown
+app.displayMovies = (movieData) => {
+    const select = document.querySelector('select');
+    for (let i = 0; i <= 19; i++) {
+        const optionElement = document.createElement("option");
+        optionElement.value = movieData[i].poster_path;
+        optionElement.innerHTML = movieData[i].original_title;
+        select.appendChild(optionElement);
+    }
+}
+
+//Adds poster image to img tag to display poster
+app.submitting = () => {
+    const movieSubmit = document.querySelector('button');
+    //event listener on submit button
+    movieSubmit.addEventListener('click', function(event) {
+        //dynamically change html page by adding to img tag to display poster
+        const selected = document.getElementById("movieList");
+        const inputValue = selected.value;
+        const ul = document.querySelector('ul');
+        const imgElement = document.getElementById("poster")
+        imgElement.src = `https://image.tmdb.org/t/p/w400/${inputValue}`;
+        ul.appendChild(imgElement);
+    });
+}
+
+
+// initializing fetch api to get data
+app.init = () => {
+    app.getMovie();
+    app.submitting();
+}
+
+app.init();

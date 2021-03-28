@@ -1,5 +1,5 @@
 const app = {};
-// movie api 
+// movie api keys
 app.apiKey = "3e2bae0bdf207133adb310d92315a2ec";
 app.apiMovie ="https://api.themoviedb.org/3/movie/popular"
 
@@ -16,27 +16,43 @@ app.getMovie = () =>{
             return x.json();
         })
         .then( (list0fMovies) =>{
-            // app.displayMovies(list0fMovies)
-            app.displayMovies(list0fMovies);
+            app.displayMovies(list0fMovies.results);
         })
     }
 }
 
-app.displayMovies = (datas) =>{
+//Get the data of the movie and populates options dropdown
+app.displayMovies = (movieData) =>{
     const select = document.querySelector('select');
     for(let i = 0; i <= 19; i ++){
         const optionElement = document.createElement("option");
-        optionElement.value = datas.results[i].id;
-        optionElement.innerHTML = datas.results[i].original_title;
+        optionElement.value = movieData[i].poster_path;
+        optionElement.innerHTML = movieData[i].original_title;
         select.appendChild(optionElement);
     }
 }
 
+//Adds poster image to img tag to display poster
+app.submitting = () => {
+    const movieSubmit = document.querySelector('button');
+    //event listener on submit button
+    movieSubmit.addEventListener('click', function(event){
+        //dynamically change html page by adding to img tag to display poster
+        const selected = document.getElementById("movieList");
+        const inputValue = selected.value;
+        const ul = document.querySelector('ul');
+        const imgElement = document.getElementById("poster")
+        imgElement.src = `https://image.tmdb.org/t/p/w400/${inputValue}`;
+        ul.appendChild(imgElement);
+      });
+}
 
 
+
+// initializing fetch api to get data
 app.init = () => {
-    // app.getGenres();
     app.getMovie();
+    app.submitting();
 }
 
 app.init();

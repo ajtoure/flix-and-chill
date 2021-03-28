@@ -133,7 +133,7 @@ app.displayMovies = (movieData) => {
     }
 }
 
-//Adds poster image to img tag to display poster
+//Adds poster image to img tag to display posters
 app.submitting = () => {
     const movieSubmit = document.querySelector('button');
     //event listener on submit button

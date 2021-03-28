@@ -35,9 +35,9 @@ app.getPics = () => {
         .then((finalResponse) => {
             app.randomPic(finalResponse);
         })
+
 }
 
-console.log(app.selectedPic);
 
 
 
@@ -66,7 +66,7 @@ app.randomPic = (dataResponse) => {
     //obtain array
     let results = dataResponse.hits;
     //as long as the array container has fewer items than the total amount of hits...
-    while (app.imgArray.length < totalHits) {
+    /*while (app.imgArray.length < totalHits) {
         // we will pick a random index number within the limits of how many hits we received
         let i = Math.floor(Math.random() * totalHits);
         // we will push these results to the array until we have ten items
@@ -76,9 +76,9 @@ app.randomPic = (dataResponse) => {
         }
         // we return the new array
         return app.imgArray;
-    }
+    }*/
 
-    console.log(results[0]);
+    console.log(dataResponse[0]);
 }
 
 
@@ -153,6 +153,7 @@ app.submitting = () => {
 app.init = () => {
     app.getMovie();
     app.submitting();
+    app.getPics();
 }
 
 app.init();

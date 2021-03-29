@@ -138,7 +138,7 @@ app.displayMovies = (movieData) => {
 
 //Adds poster image to img tag to display posters
 app.submitting = () => {
-    const movieSubmit = document.querySelector('button');
+    const movieSubmit = document.getElementById('moviebtn');
     //event listener on submit button
     movieSubmit.addEventListener('click', function(event) {
         //dynamically change html page by adding to img tag to display poster
@@ -160,3 +160,12 @@ app.init = () => {
 }
 
 app.init();
+
+//header animation effect
+
+// const slide = document.querySelector('html');
+// const slideBtn = document.getElementById('startBtn');
+
+// slideBtn.addEventListener('click', function (e){
+
+// })

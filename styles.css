@@ -7,17 +7,76 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 *, *:before, *:after {box-sizing: inherit}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+body{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 h1, h2, p {
     margin: 0;
 }
-
 
 header{
     height: 100vh;
     background: rgb(126, 116, 116);
 }
 
+
 footer{
     height: 10vh;
     background: rgb(167, 165, 165);
 }
+
+.header{
+    animation: sliding 3s ease-in-out forwards;
+    position: absolute;
+    left: -50% ;
+}
+
+.header h1{
+    font-size: 80px;
+    width: 80%;
+    
+}
+
+.startBtn{
+    position: absolute;
+    left:45%;
+    top:70%;
+    animation: startbutton 2.8s ease-in-out forwards;
+}
+
+.mainContainer{
+    width: 90%;
+    margin:0 auto;
+    height: 90vh;
+}
+
+
+footer{
+    height: 10vh;
+    background: rgb(167, 165, 165);
+}
+
+
+@keyframes sliding {
+    0%{
+        opacity: 0;
+        transform: translatex(0);
+    }
+    100%{
+        opacity: 100;
+        transform: translatex(75vw);
+    }
+}
+
+@keyframes startbutton {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100;
+    }
+}
+

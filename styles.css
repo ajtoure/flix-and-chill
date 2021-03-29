@@ -8,9 +8,9 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+
 body{
     overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 h1, h2, p {
@@ -40,11 +40,18 @@ footer{
     
 }
 
-.startBtn{
+.start{
     position: absolute;
-    left:45%;
+    left:47%;
     top:70%;
     animation: startbutton 2.8s ease-in-out forwards;
+}
+
+.btn{
+    border-radius: 50%;
+    padding: 30px;
+    border: none;
+    font-size: 20px;
 }
 
 .mainContainer{
@@ -79,4 +86,3 @@ footer{
         opacity: 100;
     }
 }
-

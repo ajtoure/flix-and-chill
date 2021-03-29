@@ -17,11 +17,15 @@ h1, h2, p {
     margin: 0;
 }
 
-
-
 header{
     height: 100vh;
     background: rgb(126, 116, 116);
+}
+
+
+footer{
+    height: 10vh;
+    background: rgb(167, 165, 165);
 }
 
 .header{
@@ -50,9 +54,6 @@ header{
 }
 
 
-
-
-
 footer{
     height: 10vh;
     background: rgb(167, 165, 165);
@@ -78,3 +79,4 @@ footer{
         opacity: 100;
     }
 }
+

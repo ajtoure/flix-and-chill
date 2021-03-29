@@ -30,73 +30,76 @@ app.getPics = () => {
         //wait for the JSOn response and log out readable data in json format
         .then((jsonResponse) => {
             //finally we use our built showPics method and pass it our readable json data as an parameter
-            return jsonResponse;
+            app.makeArray(jsonResponse);
         })
-        .then((finalResponse) => {
-            app.randomPic(finalResponse);
-        })
+}
+
+
+app.makeArray = (finalResponse) => {
+    //obtain array
+    let results = finalResponse.hits;
+    // push the first 20 results onto the empty array
+    for (i = 0; i < 20; i++) {
+        app.imgArray.push(results[i]);
+    }
+    // we return the new array
+    //app.imgArray;
+    // *******FUNCTION -> will select a random index number to extract a random result from out array
+    //Here we will pick a random index number
+    app.randomPics(app.imgArray);
 
 }
 
 
-
+// function to obtain random img, it will iterate through the query result array
+/*app.randomPic = (dataResponse) => {
+    // push the first 20 results onto the empty array
+    for (i = 0; i < 20; i++) {
+        app.imgArray.push(dataResponse.hits[i]);
+    }
+    return app.imgArray;
+    // *******FUNCTION -> will select a random index number to extract a random result from out array
+    //Here we will pick a random index number
+}*/
 
 
 
 // here will be our function to display the img
-app.showPics = (picData) => {
+app.showPics = (array) => {
     // querying the doc and find the first div
     const divOne = document.getElementsByClassName('localOne');
     // query to find the second div
     const divTwo = document.getElementsByClassName('localTwo');
+
+    //use the math method to obtain random index
+
     //for EACH object in the API we will:
     //const imgElement = document.createElement('img');
     //append the new child img element to the parent div
     //imgElement.src = picSelect.imageURL;
     //console.log(imgElement);
+    console.log(imgSelection[i]);
 }
 
 
+//function to obtain random image
 
-
-// function to obtain random img, it will iterate through the query result array
-app.randomPic = (dataResponse) => {
-    //obtain total amount of hits
-    let totalHits = dataResponse.total;
-    //obtain array
-    let results = dataResponse.hits;
-    for (i = 0; i < 20; i++) {
-        app.imgArray.push(dataResponse.hits[i]);
-    }
-    //as long as the array container has fewer items than the total amount of hits...
-    /*while (app.imgArray.length < totalHits) {
-        // we will pick a random index number within the limits of how many hits we received
-        let i = Math.floor(Math.random() * totalHits);
-        // we will push these results to the array until we have ten items
-        if (app.imgArray < 10) {
-            // here we are, pushing the results onto the globally declared array variable
-            app.imgArray.push = results[i];
-        }
-        // we return the new array
-        return app.imgArray;
-    }*/
-
-    console.log(app.imgArray);
+app.randomPics = (array) => {
+    let randomNum = Math.floor(Math.random() * 20);;
+    console.log(array[randomNum]);
 }
+
 
 
 
 
 //creating an init method
-//dateApp.init = () => {
 //first the function that gets pics
-//dateApp.getPics();
 //then the function that queries the images with the user location input
 //then the function that selects a random one out of the results
 //then a function to insert that result into the img element
-//dateApp.resultTotal = dateApp.getPics.data[0].total;
-//console.log(dateApp.resultTotal);
-//}
+
+
 /////////////////////////////////////////////////
 ////// ALL THE MOVIE CODE WILL GO HERE //////////
 /////////////////////////////////////////////////

@@ -131,12 +131,16 @@ app.getMovie = () => {
 //Get the data of the movie and populates options dropdown
 app.displayMovies = (movieData) => {
     const select = document.querySelector('select');
-    for (let i = 0; i <= 19; i++) {
-        const optionElement = document.createElement("option");
-        optionElement.value = movieData[i].poster_path;
-        optionElement.innerHTML = movieData[i].original_title;
-        select.appendChild(optionElement);
-    }
+    let counter = 0;
+    movieData.forEach((movieObject) =>{
+        if(counter <= 19){
+            const optionElement = document.createElement("option");
+            optionElement.value = movieData[counter].poster_path;
+            optionElement.innerHTML = movieData[counter].original_title;
+            select.appendChild(optionElement);
+        }
+        counter +=1;
+    })
 }
 
 //Adds poster image to img tag to display posters

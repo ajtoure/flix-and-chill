@@ -42,55 +42,37 @@ app.makeArray = (finalResponse) => {
     for (i = 0; i < 20; i++) {
         app.imgArray.push(results[i]);
     }
-    // we return the new array
-    //app.imgArray;
-    // *******FUNCTION -> will select a random index number to extract a random result from out array
-    //Here we will pick a random index number
+    //Here we will pick a random index number using the randomizer function declared below
     app.randomPics(app.imgArray);
-
 }
 
-
-// function to obtain random img, it will iterate through the query result array
-/*app.randomPic = (dataResponse) => {
-    // push the first 20 results onto the empty array
-    for (i = 0; i < 20; i++) {
-        app.imgArray.push(dataResponse.hits[i]);
-    }
-    return app.imgArray;
-    // *******FUNCTION -> will select a random index number to extract a random result from out array
-    //Here we will pick a random index number
-}*/
+//function to obtain random image
+app.randomPics = (array) => {
+    let randomNum = Math.floor(Math.random() * 20);;
+    app.randomImg = array[randomNum];
+    app.showPics(app.randomImg);
+}
 
 
 
 // here will be our function to display the img
-app.showPics = (array) => {
+app.showPics = (imgObject) => {
     // querying the doc and find the first div
-    const divOne = document.getElementsByClassName('localOne');
-    // query to find the second div
-    const divTwo = document.getElementsByClassName('localTwo');
+    const divOne = document.querySelector('#localOne');
+    divOne.innerHTML = "div one";
+    // query to find the second div 
+    const divTwo = document.querySelector('#localTwo');
 
-    //use the math method to obtain random index
 
-    //for EACH object in the API we will:
-    //const imgElement = document.createElement('img');
+    //here we create the first img element
+    const image = document.createElement('img');
+    image.src = imgObject.webformatURL;
     //append the new child img element to the parent div
+    divOne.appendChild(image);
     //imgElement.src = picSelect.imageURL;
     //console.log(imgElement);
-    console.log(imgSelection[i]);
+    console.log(divOne);
 }
-
-
-//function to obtain random image
-
-app.randomPics = (array) => {
-    let randomNum = Math.floor(Math.random() * 20);;
-    console.log(array[randomNum]);
-}
-
-
-
 
 
 //creating an init method

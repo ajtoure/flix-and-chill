@@ -94,8 +94,6 @@ app.submitImg = () => {
     });
 }
 
-// console.log(document.querySelector())
-
 
 //creating an init method
 //first the function that gets pics
@@ -165,7 +163,7 @@ app.showFinal = () => {
     const final = document.getElementById("final");
     const initial = document.getElementById("initial");
     movieSubmit.addEventListener('click', function(event) {
-        final.style.display ="block";
+        final.style.display = "block";
         final.style.animation = "showup 3.6s ease-in-out forwards";
         initial.style.display = "none";
     });
@@ -182,4 +180,3 @@ app.init = () => {
 }
 
 app.init();
-

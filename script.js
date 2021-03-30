@@ -86,10 +86,10 @@ app.showPics = (imgObject1, imgObject2) => {
 
 // event listeners for the drop down
 app.submitImg = () => {
-    document.querySelector(`#cities1`).children().addEventListener('change', function() {
+    document.querySelector(`#cities`).addEventListener('change', function() {
         app.getPics(this.value);
     });
-    document.querySelector(`#cities2`).children() addEventListener('change', function() {
+    document.querySelector(`#cities2`).addEventListener('change', function() {
         app.getPics(this.value);
     });
 }
@@ -151,11 +151,13 @@ app.submitting = () => {
     //event listener on submit button
     movieSubmit.addEventListener('click', function(event) {
         //dynamically change html page by adding to img tag to display poster
-        app.movieList();
+
+        app.getMovieValue();
     });
 }
 
-app.movieList = () => {
+app.getMovieValue = () => {
+
     const selected = document.getElementById("movieList");
     const inputValue = selected.value;
     const imgElement = document.getElementById("poster")
@@ -178,7 +180,7 @@ app.showFinal = () => {
 app.init = () => {
     app.getMovie();
     app.getPics(`victoria`);
-    app.submitImg();
+    //app.submitImg();
     app.submitting();
     app.showFinal();
 }

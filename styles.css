@@ -44,7 +44,7 @@ footer{
     position: absolute;
     left:47%;
     top:70%;
-    animation: startbutton 2.8s ease-in-out forwards;
+    animation: showup 2.8s ease-in-out forwards;
 }
 
 .btn{
@@ -78,6 +78,7 @@ footer{
     height: 100%;
     background: linear-gradient(#000, #000) no-repeat center/5px;
     position: relative;
+    display: none;
 }
 
 .leftWindow{
@@ -133,7 +134,7 @@ footer{
     }
 }
 
-@keyframes startbutton {
+@keyframes showup{
     0%{
         opacity: 0;
     }

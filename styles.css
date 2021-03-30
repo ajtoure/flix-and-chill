@@ -7,7 +7,9 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 *, *:before, *:after {box-sizing: inherit}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
-
+html{
+    scroll-behavior: smooth;
+}
 
 body{
     overflow-x: hidden;
@@ -48,10 +50,12 @@ footer{
 }
 
 .btn{
-    border-radius: 50%;
-    padding: 30px;
     border: none;
     font-size: 20px;
+    border-radius: 50%;
+    line-height: 0px;
+    display: inline-block;
+    padding: 36px;   
 }
 
 .mainContainer{
@@ -131,8 +135,8 @@ footer{
     background: #000; 
     position: absolute;
     top:200px;
-    left: 30%;
-    width: 40%;
+    left: 32%;
+    width: 36%;
     border-top: 3px solid #888; 
     padding: 15px 15px 20px 15px; 
     border-radius: 15px; 
@@ -146,7 +150,7 @@ footer{
 .tvScreen{
     position: relative;
     background-color: #777;
-    padding-bottom:450px ;
+    padding-bottom:350px ;
 }
 
 #poster{

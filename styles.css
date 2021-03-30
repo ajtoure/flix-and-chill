@@ -86,3 +86,14 @@ footer{
         opacity: 100;
     }
 }
+
+@keyframes down{
+    0%{
+        opacity: 0;
+        transform: translatey(0);
+    }
+    100%{
+        opacity: 100;
+        transform: translatey(-50vh);
+    }
+}

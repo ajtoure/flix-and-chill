@@ -80,8 +80,8 @@ app.showPics = (imgObject1, imgObject2) => {
     divTwo.appendChild(image2);
     //imgElement.src = picSelect.imageURL;
     //console.log(imgElement);
-    console.log(divOne);
-    console.log(divTwo);
+    // console.log(divOne);
+    // console.log(divTwo);
 }
 
 // event listeners for the drop down
@@ -94,7 +94,7 @@ app.submitImg = () => {
     });
 }
 
-console.log(document.querySelector())
+// console.log(document.querySelector())
 
 
 //creating an init method
@@ -174,10 +174,10 @@ app.showFinal = () => {
 
 // initializing fetch api to get data
 app.init = () => {
-    app.submitImg();
     app.getMovie();
-    app.submitting();
     app.getPics(`victoria`);
+    app.submitImg();
+    app.submitting();
     app.showFinal();
 }
 

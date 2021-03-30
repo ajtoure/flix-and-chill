@@ -94,8 +94,6 @@ app.submitImg = () => {
     });
 }
 
-console.log(document.querySelector())
-
 
 //creating an init method
 //first the function that gets pics

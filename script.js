@@ -143,10 +143,16 @@ app.submitting = () => {
         //dynamically change html page by adding to img tag to display poster
         const selected = document.getElementById("movieList");
         const inputValue = selected.value;
-        const tvImage = document.getElementById('ul');
         const imgElement = document.getElementById("poster")
         imgElement.src = `https://image.tmdb.org/t/p/w400/${inputValue}`;
-        tvImage.appendChild(imgElement);
+    });
+}
+
+app.showFinal = () => {
+    const movieSubmit = document.getElementById('finalBtn');
+    const final = document.getElementById("final");
+    movieSubmit.addEventListener('click', function(event) {
+        final.style.display ="block";
     });
 }
 
@@ -156,15 +162,8 @@ app.init = () => {
     app.getMovie();
     app.submitting();
     app.getPics();
+    app.showFinal();
 }
 
 app.init();
 
-//header animation effect
-
-// const slide = document.querySelector('html');
-// const slideBtn = document.getElementById('startBtn');
-
-// slideBtn.addEventListener('click', function (e){
-
-// })

@@ -86,10 +86,10 @@ app.showPics = (imgObject1, imgObject2) => {
 
 // event listeners for the drop down
 app.submitImg = () => {
-    document.querySelector(`#cities1`).children().addEventListener('change', function() {
+    document.querySelector(`#victoria`).addEventListener('change', function() {
         app.getPics(this.value);
     });
-    document.querySelector(`#cities2`).children() addEventListener('change', function() {
+    document.querySelector(`#victoria`).addEventListener('change', function() {
         app.getPics(this.value);
     });
 }

@@ -151,8 +151,11 @@ app.submitting = () => {
 app.showFinal = () => {
     const movieSubmit = document.getElementById('finalBtn');
     const final = document.getElementById("final");
+    const initial = document.getElementById("initial");
     movieSubmit.addEventListener('click', function(event) {
         final.style.display ="block";
+        final.style.animation = "showup 3.6s ease-in-out forwards";
+        initial.style.display = "none";
     });
 }
 

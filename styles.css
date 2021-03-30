@@ -44,7 +44,7 @@ footer{
     position: absolute;
     left:47%;
     top:70%;
-    animation: startbutton 2.8s ease-in-out forwards;
+    animation: showup 2.8s ease-in-out forwards;
 }
 
 .btn{
@@ -134,7 +134,7 @@ footer{
     }
 }
 
-@keyframes startbutton {
+@keyframes showup{
     0%{
         opacity: 0;
     }

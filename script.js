@@ -48,15 +48,19 @@ app.makeArray = (finalResponse) => {
 
 //function to obtain random image
 app.randomPics = (array) => {
-    let randomNum = Math.floor(Math.random() * 20);;
-    app.randomImg = array[randomNum];
-    app.showPics(app.randomImg);
+    let randomNum1 = Math.floor(Math.random() * 20);
+    app.randomImg1 = array[randomNum1];
+
+    let randomNum2 = Math.floor(Math.random() * 20);
+    app.randomImg2 = array[randomNum2];
+
+    app.showPics(app.randomImg1, app.randomImg2);
 }
 
 
 
 // here will be our function to display the img
-app.showPics = (imgObject) => {
+app.showPics = (imgObject1, imgObject2) => {
     // querying the doc and find the first div
     const divOne = document.querySelector('#localOne');
     divOne.innerHTML = '';
@@ -66,13 +70,18 @@ app.showPics = (imgObject) => {
 
 
     //here we create the first img element
-    const image = document.createElement('img');
-    image.src = imgObject.webformatURL;
+    const image1 = document.createElement('img');
+    image1.src = imgObject1.webformatURL;
+
+    const image2 = document.createElement('img');
+    image2.src = imgObject2.webformatURL;
     //append the new child img element to the parent div
-    divOne.appendChild(image);
+    divOne.appendChild(image1);
+    divTwo.appendChild(image2);
     //imgElement.src = picSelect.imageURL;
     //console.log(imgElement);
     console.log(divOne);
+    console.log(divTwo);
 }
 
 
@@ -115,14 +124,14 @@ app.getMovie = () => {
 app.displayMovies = (movieData) => {
     const select = document.querySelector('select');
     let counter = 0;
-    movieData.forEach((movieObject) =>{
-        if(counter <= 19){
+    movieData.forEach((movieObject) => {
+        if (counter <= 19) {
             const optionElement = document.createElement("option");
             optionElement.value = movieData[counter].poster_path;
             optionElement.innerHTML = movieData[counter].original_title;
             select.appendChild(optionElement);
         }
-        counter +=1;
+        counter += 1;
     })
 }
 

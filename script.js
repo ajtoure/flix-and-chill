@@ -151,16 +151,17 @@ app.submitting = () => {
     //event listener on submit button
     movieSubmit.addEventListener('click', function(event) {
         //dynamically change html page by adding to img tag to display poster
-        app.movieList();
+        app.getMovieValue();
     });
 }
 
-app.movieList = () => {
+app.getMovieValue = () =>{
     const selected = document.getElementById("movieList");
     const inputValue = selected.value;
     const imgElement = document.getElementById("poster")
     imgElement.src = `https://image.tmdb.org/t/p/w400/${inputValue}`;
 }
+
 
 app.showFinal = () => {
     const movieSubmit = document.getElementById('finalBtn');

@@ -10,14 +10,14 @@ app.imgArray = [];
 app.selectedPic = {};
 
 //create a method to get the dataset from the api
-app.getPics = () => {
+app.getPics = (query) => {
     //here we use the URL constructor to use our URL and set our search parameters to include in our endpoint
     const url = new URL(app.imgApiUrl);
     url.search = new URLSearchParams({
         //passing in the api key
         key: app.imgApiKey,
         //test query
-        q: "toronto",
+        q: query,
         //only one page of results
         page: 1
     })
@@ -83,6 +83,18 @@ app.showPics = (imgObject1, imgObject2) => {
     console.log(divOne);
     console.log(divTwo);
 }
+
+// event listeners for the drop down
+app.submitImg = () => {
+    document.querySelector(`#victoria`).addEventListener('change', function() {
+        app.getPics(this.value);
+    });
+    document.querySelector(`#victoria`).addEventListener('change', function() {
+        app.getPics(this.value);
+    });
+}
+
+console.log(document.querySelector())
 
 
 //creating an init method
@@ -153,9 +165,10 @@ app.submitting = () => {
 
 // initializing fetch api to get data
 app.init = () => {
+    app.submitImg();
     app.getMovie();
     app.submitting();
-    app.getPics();
+    app.getPics(`victoria`);
 }
 
 app.init();

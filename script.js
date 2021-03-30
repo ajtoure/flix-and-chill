@@ -143,10 +143,10 @@ app.submitting = () => {
         //dynamically change html page by adding to img tag to display poster
         const selected = document.getElementById("movieList");
         const inputValue = selected.value;
-        const ul = document.querySelector('ul');
+        const tvImage = document.getElementById('ul');
         const imgElement = document.getElementById("poster")
         imgElement.src = `https://image.tmdb.org/t/p/w400/${inputValue}`;
-        ul.appendChild(imgElement);
+        tvImage.appendChild(imgElement);
     });
 }
 

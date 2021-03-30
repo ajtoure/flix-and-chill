@@ -59,9 +59,10 @@ app.randomPics = (array) => {
 app.showPics = (imgObject) => {
     // querying the doc and find the first div
     const divOne = document.querySelector('#localOne');
-    divOne.innerHTML = "div one";
+    divOne.innerHTML = '';
     // query to find the second div 
     const divTwo = document.querySelector('#localTwo');
+    divTwo.innerHTML = '';
 
 
     //here we create the first img element

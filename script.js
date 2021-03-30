@@ -151,13 +151,11 @@ app.submitting = () => {
     //event listener on submit button
     movieSubmit.addEventListener('click', function(event) {
         //dynamically change html page by adding to img tag to display poster
-
         app.getMovieValue();
     });
 }
 
 app.getMovieValue = () => {
-
     const selected = document.getElementById("movieList");
     const inputValue = selected.value;
     const imgElement = document.getElementById("poster")

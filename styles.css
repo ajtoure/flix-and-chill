@@ -285,7 +285,6 @@ h3 {
 }
 
 header {
-    height: 100vh;
     background: #68B0AB;
 }
 
@@ -296,20 +295,19 @@ footer {
 
 .header {
     animation: sliding 3s ease-in-out forwards;
-    position: absolute;
-    left: -50%;
+    padding: 200px 0px 450px 0px;
+    position: relative;
 }
 
 .header h1 {
-    font-size: 100px;
-    width: 55%;
+    font-size: 12vw;
     font-family: 'Baloo 2', cursive;
     font-weight: 600;
-    margin: 0 auto;
     color: white;
-    padding-top: 100px;
     text-align: center;
     text-shadow: 1px 2px #056A72;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .header p {
@@ -322,10 +320,14 @@ footer {
     text-shadow: 0.5px 0.5px 5px #FFFFFF;
 }
 
+
+.dropDown{
+    display: flex;
+    justify-content: center;
+}
+
+
 .start {
-    position: absolute;
-    left: 47%;
-    top: 70%;
     animation: showup 2.8s ease-in-out forwards;
 }
 
@@ -483,11 +485,11 @@ footer {
 @keyframes sliding {
     0% {
         opacity: 0;
-        transform: translatex(0);
+        transform: translatey(-50vh);
     }
     100% {
         opacity: 100;
-        transform: translatex(75vw);
+        transform: translatey(-2vh);
     }
 }
 

@@ -39,7 +39,6 @@ footer{
 .header h1{
     font-size: 80px;
     width: 80%;
-    
 }
 
 .start{
@@ -61,8 +60,42 @@ footer{
 .mainContainer{
     width: 90%;
     margin:0 auto;
-    height: 90vh;
+    height: 900px;
     position: relative;
+}
+
+.optionsContainer{
+    display: flex;
+    height: 550px;
+    align-items: center;
+    
+}
+
+.movieList{
+    width: 50%;
+}
+.movieOptions{
+    width: 35%;
+}
+
+.movieOptions select{
+    width: 100%;
+}
+
+.firstLocation{
+    width: 50%;
+    text-align: center;
+}
+
+.secondLocation{
+    width: 50%;
+    text-align: center;
+}
+
+.movieBtn{
+    position: absolute;
+    top: 50%;
+    left: 48%;
 }
 
 
@@ -75,8 +108,8 @@ footer{
 
 .finalBtn{
     position: absolute;
-    top: 50%;
-    left:45%
+    top: 80%;
+    left: 45%;
 }
 
 .final{

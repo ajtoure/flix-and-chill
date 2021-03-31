@@ -270,6 +270,7 @@ html {
 
 body {
     overflow-x: hidden;
+    background: linear-gradient(rgba(38, 158, 150, 0.85), rgba(218, 233, 232, 0.6)), url(./watercolor.png);
 }
 
 h1,
@@ -284,9 +285,7 @@ h3 {
     font-family: 'Baloo 2', cursive;
 }
 
-header {
-    background: #68B0AB;
-}
+
 
 footer {
     height: 10vh;
@@ -294,8 +293,8 @@ footer {
 }
 
 .header {
-    animation: sliding 3s ease-in-out forwards;
-    padding: 200px 0px 450px 0px;
+    animation: sliding 2.5s ease-in-out forwards;
+    padding: 150px 0px 170px 0px;
     position: relative;
 }
 
@@ -309,6 +308,32 @@ footer {
     width: 50%;
     margin: 0 auto;
 }
+h2{
+    font-size: 2.2vw;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 400;
+    color: white;
+}
+.slogan {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.firstP{
+    animation: showup 4.0s ease-in-out forwards;
+}
+
+.secondP{
+    animation: showup 6.0s ease-in-out forwards;
+}
+
+.thirdP{
+    animation: showup 7.5s ease-in-out forwards;
+}
+
+
 
 .header p {
     margin: 0 auto;
@@ -329,6 +354,7 @@ footer {
 
 .start {
     animation: showup 2.8s ease-in-out forwards;
+    margin-bottom: 50px;
 }
 
 .buttonContainer {
@@ -353,7 +379,14 @@ footer {
     border-radius: 50%;
     line-height: 0px;
     display: inline-block;
-    padding: 36px;
+    padding: 30px;
+}
+
+.btn:hover , .btn:focus{
+    cursor: pointer;
+    background:rgba(104, 176, 171, 0.6);
+    color: white;
+    border: 1px white solid;
 }
 
 .mainContainer {
@@ -505,7 +538,7 @@ footer {
     }
     100% {
         opacity: 100;
-        transform: translatey(-2vh);
+        transform: translatey(-10vh);
     }
 }
 

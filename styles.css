@@ -346,11 +346,19 @@ h2{
 }
 
 
+
 .dropDown{
     display: flex;
     justify-content: center;
 }
 
+#initial{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+
+}
 
 .start {
     animation: showup 2.8s ease-in-out forwards;
@@ -370,7 +378,6 @@ h2{
     background-color: #FB7C64;
     color: #FFFFFF;
     padding: 20px;
-    margin: 0;
 }
 
 .btn {
@@ -399,9 +406,34 @@ h2{
 }
 
 .optionsContainer {
+    width: 45%;
+    border: 5px black solid;
+    height: 70%;
+    border-radius: 25px;
     display: flex;
-    height: 550px;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+
+.instructions{
+    width: 45%;
+    border: 5px black solid;
+    height: 70%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+span{
+    font-weight: bold;
+}
+
+.instructions h2{
+    color: black;
+    text-align: center;
 }
 
 .movieList {
@@ -409,7 +441,6 @@ h2{
 }
 
 .movieOptions {
-    width: calc(100%/3);
     text-align: center;
 }
 
@@ -419,19 +450,21 @@ h2{
 }
 
 .firstLocation {
-    width: calc(100%/3);
     text-align: center;
 }
 
 .secondLocation {
-    width: calc(100%/3);
     text-align: center;
 }
 
-.movieBtn {
-    position: absolute;
-    top: 50%;
-    left: 48%;
+.optionsBtn{
+    display: flex;
+    justify-content: center;
+}
+
+.showDate{
+    display: flex;
+    justify-content: center;
 }
 
 footer {
@@ -442,11 +475,6 @@ footer {
     font-family: 'Baloo 2', cursive;
 }
 
-.finalBtn {
-    position: absolute;
-    top: 80%;
-    left: 45%;
-}
 
 .final {
     border: 5px black solid;

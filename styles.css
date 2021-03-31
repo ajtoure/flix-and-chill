@@ -375,9 +375,11 @@ h2{
 
 .mainContainer {
     width: 90%;
-    margin: 0 auto;
+    margin: 20px auto;
     height: 900px;
-    position: relative;
+    position: relative;;
+    border-radius: 40px;
+    background: white;
 }
 
 .optionsContainer {
@@ -391,20 +393,22 @@ h2{
 }
 
 .movieOptions {
-    width: 35%;
+    width: calc(100%/3);
+    text-align: center;
 }
 
+
 .movieOptions select {
-    width: 100%;
+    width: 50%;
 }
 
 .firstLocation {
-    width: 50%;
+    width: calc(100%/3);
     text-align: center;
 }
 
 .secondLocation {
-    width: 50%;
+    width: calc(100%/3);
     text-align: center;
 }
 
@@ -419,6 +423,7 @@ footer {
     background: rgb(167, 165, 165);
     text-align: center;
     padding-top: 40px;
+    font-family: 'Baloo 2', cursive;
 }
 
 .finalBtn {

@@ -399,7 +399,7 @@ h2 {
     position: relative;
     ;
     border-radius: 40px;
-    background: white;
+    background-color: #EBF3F4;
 }
 
 .optionsContainer {
@@ -412,6 +412,7 @@ h2 {
     justify-content: space-evenly;
     position: relative;
     color: #056A72;
+    background-color: #EBF3F4;
 }
 
 .instructions {
@@ -515,6 +516,13 @@ footer {
     bottom: 0;
 }
 
+.left img {
+    width: 75%;
+    height: auto;
+    z-index: 1;
+    padding-top: 70%;
+}
+
 .right h3 {
     position: absolute;
     bottom: 0;
@@ -525,6 +533,14 @@ footer {
     width: 50%;
     background: #9AD3BC;
     height: 100%;
+}
+
+.right img {
+    width: 75%;
+    height: auto;
+    z-index: 1;
+    padding-top: 70%;
+    transform: scalex(-1);
 }
 
 .leftWindow {

@@ -507,7 +507,7 @@ footer {
 
 .left {
     width: 50%;
-    background: #FB7C64;
+    background: #e8f48c;
     height: 100%;
 }
 
@@ -516,17 +516,31 @@ footer {
     bottom: 0;
 }
 
-.left img {
+.leftImgContainer {
     width: 75%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.left img {
+    width: 100%;
     height: auto;
     z-index: 1;
-    padding-top: 70%;
+    padding: 70% 0 0 0;
+    margin: 0;
+    display: block;
 }
 
 .right h3 {
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+.rightImgContainer {
+    width: 75%;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .right {
@@ -536,10 +550,11 @@ footer {
 }
 
 .right img {
-    width: 75%;
+    width: 100%;
     height: auto;
     z-index: 1;
-    padding-top: 70%;
+    padding: 70% 0 0 0;
+    margin: 0;
     transform: scalex(-1);
 }
 

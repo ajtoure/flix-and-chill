@@ -10,7 +10,6 @@ app.responseArray1 = [];
 app.responseArray2 = [];
 app.imgArray1 = [];
 app.imgArray2 = [];
-app.selectedPic = {};
 
 
 //HERE IS OUR INITAL SUBMIT

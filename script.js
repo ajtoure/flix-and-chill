@@ -208,22 +208,7 @@ app.displayMovies = (movieData) => {
     })
 }
 
-//Adds poster image to img tag to display posters
-app.submitting = () => {
-    const movieSubmit = document.getElementById('moviebtn');
-    //event listener on submit button
-    movieSubmit.addEventListener('click', function(event) {
-        //dynamically change html page by adding to img tag to display poster
-        app.getMovieValue();
-    });
-}
 
-app.getMovieValue = () => {
-    const selected = document.getElementById("movieList");
-    const inputValue = selected.value;
-    const imgElement = document.getElementById("poster")
-    imgElement.src = `https://image.tmdb.org/t/p/w400/${inputValue}`;
-}
 
 
 app.showFinal = () => {
@@ -231,6 +216,10 @@ app.showFinal = () => {
     const final = document.getElementById("final");
     const initial = document.getElementById("initial");
     movieSubmit.addEventListener('click', function(event) {
+        const selected = document.getElementById("movieList");
+        const inputValue = selected.value;
+        const imgElement = document.getElementById("poster")
+        imgElement.src = `https://image.tmdb.org/t/p/w400/${inputValue}`;
         final.style.display = "block";
         final.style.animation = "showup 3.6s ease-in-out forwards";
         initial.style.display = "none";
@@ -243,7 +232,6 @@ app.showFinal = () => {
 app.init = () => {
     app.getMovie();
     app.getFirstImg();
-    app.submitting();
     app.showFinal();
 }
 

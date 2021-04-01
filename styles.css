@@ -402,25 +402,39 @@ h2 {
 
 .optionsContainer {
     width: 45%;
-    border: 5px black solid;
+    border: 2.5px solid #056A72;
     height: 70%;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     position: relative;
+    color: #056A72;
 }
 
 
-.instructions{
+.instructions {
     width: 45%;
-    border: 5px black solid;
+    border: 2.5px solid #056A72;
     height: 70%;
-    border-radius: 25px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    color: #056A72;
 }
+.instructions p {
+    padding: 20px;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    color: charcoal;
+}
+
+.instructions h2 {
+    color: black;
+    text-align: center;
+}
+
 
 .buttonContainer{
     display: flex;
@@ -469,12 +483,13 @@ span{
 
 footer {
     height: 10vh;
-    background: rgb(167, 165, 165);
+    background: #68B0AB;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 25px;
     font-family: 'Baloo 2', cursive;
+    font-weight: 600;
+    color: #FFFFFF;
 }
-
 
 .final {
     border: 5px black solid;

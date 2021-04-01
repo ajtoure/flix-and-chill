@@ -621,27 +621,7 @@ footer {
     width: 100%;
 }
 
-.leftHead {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    background: white;
-    border-radius: 50%;
-    bottom: 27%;
-    left: 51%;
-    z-index: 2;
-}
 
-.leftBody {
-    position: absolute;
-    width: 200px;
-    height: 250px;
-    background: black;
-    bottom: 0;
-    left: 47%;
-    border-top-left-radius: 25%;
-    border-top-right-radius: 25%;
-}
 
 .rightPerson {
     position: relative;
@@ -649,27 +629,7 @@ footer {
     width: 100%;
 }
 
-.rightHead {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    background: white;
-    border-radius: 50%;
-    bottom: 27%;
-    left: 24%;
-    z-index: 2;
-}
 
-.rightBody {
-    position: absolute;
-    width: 200px;
-    height: 250px;
-    background: black;
-    bottom: 0;
-    left: 20%;
-    border-top-left-radius: 25%;
-    border-top-right-radius: 25%;
-}
 
 .tv {
     background: #000;

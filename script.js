@@ -17,7 +17,7 @@ app.selectedPic = {};
 // event listeners for thedrop down
 app.submitImg1 = () => {
     document.querySelector(`#cities1`).addEventListener('change', function() {
-        let query = this.value;
+        app.getPic1(this.value);
     });
 }
 
@@ -49,7 +49,9 @@ app.getPic1 = (query) => {
         .then((jsonResponse) => {
             //finally we use our built showPics method and pass it our readable json data as an parameter
             app.responseArray1 = jsonResponse;
+
         })
+    console.log = app.responseArray1;
 }
 
 app.getPic2 = (query) => {
@@ -233,6 +235,7 @@ app.showFinal = () => {
         final.style.display = "block";
         final.style.animation = "showup 3.6s ease-in-out forwards";
         initial.style.display = "none";
+        movieSubmit.style.display = 'none'
     });
 }
 

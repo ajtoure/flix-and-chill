@@ -310,8 +310,8 @@ footer {
 h2 {
     font-size: 2.2vw;
     font-family: 'Baloo 2', cursive;
-    font-weight: 400;
-    color: white;
+    font-weight: 600;
+    color: #056A72;
 }
 
 .slogan {
@@ -343,18 +343,25 @@ h2 {
     text-shadow: 0.5px 0.5px 5px #FFFFFF;
 }
 
+.slogan h2 {
+    padding-top: 40px;
+}
+
 .dropDown {
     display: flex;
     justify-content: center;
 }
 
+#initial {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+}
+
 .start {
     animation: showup 2.8s ease-in-out forwards;
     margin-bottom: 50px;
-}
-
-.buttonContainer {
-    display: flex;
 }
 
 .movieBtn,
@@ -366,7 +373,6 @@ h2 {
     background-color: #FB7C64;
     color: #FFFFFF;
     padding: 20px;
-    margin: 0;
 }
 
 .btn {
@@ -390,15 +396,54 @@ h2 {
     width: 90%;
     margin: 20px auto;
     height: 900px;
-    position: relative;;
+    position: relative;
+    ;
     border-radius: 40px;
     background: white;
 }
 
 .optionsContainer {
+    width: 45%;
+    border: 2.5px solid #056A72;
+    height: 70%;
+    border-radius: 20px;
     display: flex;
-    height: 550px;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    color: #056A72;
+}
+
+.instructions {
+    width: 45%;
+    border: 2.5px solid #056A72;
+    height: 70%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #056A72;
+}
+
+.instructions p {
+    padding: 20px;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    color: charcoal;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+span {
+    font-weight: bold;
+}
+
+.instructions h2 {
+    color: black;
+    text-align: center;
 }
 
 .movieList {
@@ -406,43 +451,39 @@ h2 {
 }
 
 .movieOptions {
-    width: calc(100%/3);
     text-align: center;
 }
-
 
 .movieOptions select {
     width: 50%;
 }
 
 .firstLocation {
-    width: calc(100%/3);
     text-align: center;
 }
 
 .secondLocation {
-    width: calc(100%/3);
     text-align: center;
 }
 
-.movieBtn {
-    position: absolute;
-    top: 50%;
-    left: 48%;
+.optionsBtn {
+    display: flex;
+    justify-content: center;
+}
+
+.showDate {
+    display: flex;
+    justify-content: center;
 }
 
 footer {
     height: 10vh;
-    background: rgb(167, 165, 165);
+    background: #68B0AB;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 25px;
     font-family: 'Baloo 2', cursive;
-}
-
-.finalBtn {
-    position: absolute;
-    top: 80%;
-    left: 45%;
+    font-weight: 600;
+    color: #FFFFFF;
 }
 
 .final {

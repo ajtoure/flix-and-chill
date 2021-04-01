@@ -270,7 +270,7 @@ html {
 
 body {
     overflow-x: hidden;
-    background: linear-gradient(rgba(38, 158, 150, 0.85), rgba(218, 233, 232, 0.6)), url(./watercolor.png);
+    background: linear-gradient(rgba(38, 158, 150, 0.85), rgba(218, 233, 232, 0.6));
 }
 
 h1,
@@ -522,7 +522,7 @@ select:focus {
 }
 
 .leftPerson img {
-    width: 55%;
+    width: 65%;
     height: 60%;
     position: absolute;
     bottom: -2%;
@@ -531,12 +531,13 @@ select:focus {
 }
 
 .rightPerson img {
-    width: 55%;
+    width: 65%;
     height: 60%;
     position: absolute;
-    bottom: 0%;
+    bottom: -2%;
     left: 8%;
     z-index: 2;
+    transform: scalex(-1);
 }
 
 footer {

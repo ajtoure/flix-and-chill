@@ -285,8 +285,6 @@ h3 {
     font-family: 'Baloo 2', cursive;
 }
 
-
-
 footer {
     height: 10vh;
     background: rgb(167, 165, 165);
@@ -308,12 +306,14 @@ footer {
     width: 50%;
     margin: 0 auto;
 }
-h2{
+
+h2 {
     font-size: 2.2vw;
     font-family: 'Baloo 2', cursive;
     font-weight: 400;
     color: white;
 }
+
 .slogan {
     display: flex;
     justify-content: space-between;
@@ -321,19 +321,17 @@ h2{
     margin: 0 auto;
 }
 
-.firstP{
+.firstP {
     animation: showup 4.0s ease-in-out forwards;
 }
 
-.secondP{
+.secondP {
     animation: showup 6.0s ease-in-out forwards;
 }
 
-.thirdP{
+.thirdP {
     animation: showup 7.5s ease-in-out forwards;
 }
-
-
 
 .header p {
     margin: 0 auto;
@@ -345,9 +343,8 @@ h2{
     text-shadow: 0.5px 0.5px 5px #FFFFFF;
 }
 
-
-
 .dropDown{
+
     display: flex;
     justify-content: center;
 }
@@ -386,9 +383,10 @@ h2{
     padding: 30px;
 }
 
-.btn:hover , .btn:focus{
+.btn:hover,
+.btn:focus {
     cursor: pointer;
-    background:rgba(104, 176, 171, 0.6);
+    background: rgba(104, 176, 171, 0.6);
     color: white;
     border: 1px white solid;
 }

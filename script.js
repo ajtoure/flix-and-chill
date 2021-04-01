@@ -209,14 +209,6 @@ app.displayMovies = (movieData) => {
     })
 }
 
-//Adds poster image to img tag to display posters
-app.submitting = () => {
-    const movieSubmit = document.getElementById('moviebtn');
-    //event listener on submit button
-    movieSubmit.addEventListener('click', function(event) {
-        //dynamically change html page by adding to img tag to display poster
-    });
-}
 
 
 
@@ -241,7 +233,6 @@ app.showFinal = () => {
 app.init = () => {
     app.getMovie();
     app.getFirstImg();
-    app.submitting();
     app.showFinal();
 }
 

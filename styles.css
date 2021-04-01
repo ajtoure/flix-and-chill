@@ -364,12 +364,12 @@ h2 {
     margin-bottom: 50px;
 }
 
-.movieBtn,
 .finalBtn {
     width: 15%;
-    min-width: 100px;
     border: none;
+    border-radius: 20px;
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     background-color: #FB7C64;
     color: #FFFFFF;
     padding: 20px;
@@ -392,6 +392,14 @@ h2 {
     border: 1px white solid;
 }
 
+.finalBtn:hover,
+.finalBtn:focus {
+    cursor: pointer;
+    background: white;
+    border: 1px solid #056A72;
+    color: #056A72;
+}
+
 .mainContainer {
     width: 90%;
     margin: 20px auto;
@@ -412,6 +420,12 @@ h2 {
     justify-content: space-evenly;
     position: relative;
     color: #056A72;
+    background: #EBF3F4;
+}
+
+
+.optionsContainer h3{
+    font-size: 26px;
 }
 
 .instructions {
@@ -423,6 +437,7 @@ h2 {
     flex-direction: column;
     justify-content: space-evenly;
     color: #056A72;
+    background: #EBF3F4;
 }
 
 .instructions p {
@@ -461,10 +476,37 @@ span {
 
 .movieOptions select {
     width: 50%;
+    border: 1px solid #056A72;
+    border-radius: 20px;
+    padding: 15px;
+    border-radius: 20px;
 }
+
 
 .firstLocation {
     text-align: center;
+}
+
+.firstLocation select{
+    width: 50%;
+    border: 1px solid #056A72;
+    border-radius: 20px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.secondLocation select{
+    width: 50%;
+    border: 1px solid #056A72;
+    border-radius: 20px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+ select:hover ,
+ select:focus {
+    cursor: pointer;
+    border:2.5px solid #056A72;
 }
 
 .secondLocation {
@@ -480,6 +522,7 @@ span {
     display: flex;
     justify-content: center;
 }
+
 
 .leftPerson img{
     width: 55%;

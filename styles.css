@@ -481,6 +481,24 @@ span {
     justify-content: center;
 }
 
+.leftPerson img{
+    width: 55%;
+    height: 60%;
+    position: absolute;
+    bottom: -2%;
+    left: 39%;
+    z-index: 2;
+}
+
+.rightPerson img{
+    width: 55%;
+    height: 60%;
+    position: absolute;
+    bottom: 0%;
+    left: 8%;
+    z-index: 2;
+}
+
 footer {
     height: 10vh;
     background: #68B0AB;

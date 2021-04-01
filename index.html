@@ -13,7 +13,6 @@
 
 <body>
     <header>
-        <div class="wallpaper">
             <div class="header">
                 <h1>
                     FLIX & CHILL
@@ -21,14 +20,13 @@
                 <p>a virtual date generator</p>
                 <div class="slogan">
                     <h2 class="firstP">No matter the distance -</h2>
-                    <h2 class="secondP">no matter where you are -</h2 class="thirdP">
+                    <h2 class="secondP">no matter where you are -</h2>
                     <h2 class="thirdP"> a connection can be made </h2>
                 </div>
             </div>
             <div class="dropDown">
                 <a href="#mainContainer" class="start"><button class="btn">&darr;</button></a>
             </div>
-        </div>
     </header>
     <main>
 
@@ -43,7 +41,9 @@
                 <div class="optionsContainer">
                     <div class="movieOptions">
                         <h3>Popular Movie Collections list:</h3>
-                        <select name="" id="movieList"></select>
+                        <select name="" id="movieList">
+                            <option value="">Select A Movie</option>
+                        </select>
                     </div>
                     <div class="firstLocation">
                         <h3>Pick your city:</h3>
@@ -86,17 +86,31 @@
                 <div class="finalContainer">
                     <div class="left">
                         <h3>Location, location</h3>
-                        <div class="leftWindow" id="localOne"></div>
-                        <div class="leftPerson"></div>
+                        <div class="person"></div>
+                        <div class="leftWindow" id="localOne">
+                        </div>
+                        <div class="leftPerson">
+                            <div class="leftHair"></div>
+                            <div class="leftHead"></div>
+                            <div class="leftBody"></div>
+                        </div>
                     </div>
                     <div class="right">
                         <h3>Location, location</h3>
                         <div class="rightWindow" id="localTwo"></div>
-                        <div class="rightPerson"></div>
+                        <div class="rightPerson">
+                            <div class="rightHair"></div>
+                            <div class="rightHead"></div>
+                            <div class="rightBody"></div>
+                        </div>
                     </div>
                     <div class="tv">
                         <div class="tvScreen">
                             <div>
+                                <div class="leftVertical"></div>
+                                <div class="leftHorizontal"></div>
+                                <div class="rightVertical"></div>
+                                <div class="rightHorizontal"></div>
                                 <img src="" alt="" id="poster">
                             </div>
                         </div>

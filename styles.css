@@ -365,9 +365,6 @@ h2{
     margin-bottom: 50px;
 }
 
-.buttonContainer {
-    display: flex;
-}
 
 .movieBtn,
 .finalBtn {
@@ -425,6 +422,11 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
 }
 
 span{

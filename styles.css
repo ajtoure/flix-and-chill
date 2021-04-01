@@ -310,8 +310,8 @@ footer {
 h2 {
     font-size: 2.2vw;
     font-family: 'Baloo 2', cursive;
-    font-weight: 400;
-    color: white;
+    font-weight: 600;
+    color: #056A72;
 }
 
 .slogan {
@@ -343,25 +343,26 @@ h2 {
     text-shadow: 0.5px 0.5px 5px #FFFFFF;
 }
 
-.dropDown{
+.slogan h2 {
+    padding-top: 40px;
+}
 
+.dropDown {
     display: flex;
     justify-content: center;
 }
 
-#initial{
+#initial {
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 80%;
-
 }
 
 .start {
     animation: showup 2.8s ease-in-out forwards;
     margin-bottom: 50px;
 }
-
 
 .movieBtn,
 .finalBtn {
@@ -395,7 +396,8 @@ h2 {
     width: 90%;
     margin: 20px auto;
     height: 900px;
-    position: relative;;
+    position: relative;
+    ;
     border-radius: 40px;
     background: white;
 }
@@ -404,14 +406,13 @@ h2 {
     width: 45%;
     border: 2.5px solid #056A72;
     height: 70%;
-    border-radius: 25px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     position: relative;
     color: #056A72;
 }
-
 
 .instructions {
     width: 45%;
@@ -423,6 +424,7 @@ h2 {
     justify-content: space-evenly;
     color: #056A72;
 }
+
 .instructions p {
     padding: 20px;
     font-family: Montserrat, sans-serif;
@@ -435,17 +437,16 @@ h2 {
     text-align: center;
 }
 
-
-.buttonContainer{
+.buttonContainer {
     display: flex;
     justify-content: center;
 }
 
-span{
+span {
     font-weight: bold;
 }
 
-.instructions h2{
+.instructions h2 {
     color: black;
     text-align: center;
 }
@@ -457,7 +458,6 @@ span{
 .movieOptions {
     text-align: center;
 }
-
 
 .movieOptions select {
     width: 50%;
@@ -471,12 +471,12 @@ span{
     text-align: center;
 }
 
-.optionsBtn{
+.optionsBtn {
     display: flex;
     justify-content: center;
 }
 
-.showDate{
+.showDate {
     display: flex;
     justify-content: center;
 }
@@ -552,9 +552,9 @@ footer {
     position: absolute;
     top: 50px;
     left: 50px;
-    -webkit-box-shadow: 10px 10px 111px 19px rgba(255,226,59,1);
-    -moz-box-shadow: 10px 10px 111px 19px rgba(255,226,59,1);
-    box-shadow: 10px 10px 111px 19px rgba(255,226,59,1);
+    -webkit-box-shadow: 10px 10px 111px 19px rgba(255, 226, 59, 1);
+    -moz-box-shadow: 10px 10px 111px 19px rgba(255, 226, 59, 1);
+    box-shadow: 10px 10px 111px 19px rgba(255, 226, 59, 1);
 }
 
 .leftWindow img {
@@ -569,16 +569,17 @@ footer {
     position: absolute;
     top: 50px;
     right: 50px;
-    -webkit-box-shadow: 10px 10px 111px 19px rgba(255,226,59,1);
-    -moz-box-shadow: 10px 10px 111px 19px rgba(255,226,59,1);
-    box-shadow: 10px 10px 111px 19px rgba(255,226,59,1);
+    -webkit-box-shadow: 10px 10px 111px 19px rgba(255, 226, 59, 1);
+    -moz-box-shadow: 10px 10px 111px 19px rgba(255, 226, 59, 1);
+    box-shadow: 10px 10px 111px 19px rgba(255, 226, 59, 1);
 }
 
 .rightWindow img {
     width: 100%;
     height: 100%;
 }
-.leftHorizontal{
+
+.leftHorizontal {
     border: 6px #804C36 solid;
     width: 74%;
     position: absolute;
@@ -596,7 +597,7 @@ footer {
     border-left: 10px #804C36 solid;
 }
 
-.rightHorizontal{
+.rightHorizontal {
     border: 6px #804C36 solid;
     width: 74%;
     position: absolute;
@@ -614,18 +615,39 @@ footer {
     border-left: 10px #804C36 solid;
 }
 
-.leftPerson{
+.leftPerson {
     position: relative;
     height: 100%;
     width: 100%;
 }
 
-.rightPerson{
+.leftHead {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 50%;
+    bottom: 27%;
+    left: 51%;
+    z-index: 2;
+}
+
+.leftBody {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    background: black;
+    bottom: 0;
+    left: 47%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+}
+
+.rightPerson {
     position: relative;
     height: 100%;
     width: 100%;
 }
-
 
 .rightHead {
     position: absolute;
@@ -638,7 +660,7 @@ footer {
     z-index: 2;
 }
 
-.rightBody{
+.rightBody {
     position: absolute;
     width: 200px;
     height: 250px;
@@ -695,13 +717,13 @@ footer {
 
 @keyframes flashing {
     0% {
-        -webkit-box-shadow: 10px 10px 77px -14px rgba(250,250,250,1);
-        -moz-box-shadow: 10px 10px 77px -14px rgba(250,250,250,1);
-        box-shadow: 10px 10px 77px -14px rgba(250,250,250,1);
+        -webkit-box-shadow: 10px 10px 77px -14px rgba(250, 250, 250, 1);
+        -moz-box-shadow: 10px 10px 77px -14px rgba(250, 250, 250, 1);
+        box-shadow: 10px 10px 77px -14px rgba(250, 250, 250, 1);
     }
     100% {
-        -webkit-box-shadow: 10px 10px 135px 52px rgba(250,250,250,1);
-        -moz-box-shadow: 10px 10px 135px 52px rgba(250,250,250,1);
-        box-shadow: 10px 10px 135px 52px rgba(250,250,250,1);
+        -webkit-box-shadow: 10px 10px 135px 52px rgba(250, 250, 250, 1);
+        -moz-box-shadow: 10px 10px 135px 52px rgba(250, 250, 250, 1);
+        box-shadow: 10px 10px 135px 52px rgba(250, 250, 250, 1);
     }
 }

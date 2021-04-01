@@ -6,11 +6,29 @@ app.imgApiUrl = "https://pixabay.com/api/";
 app.imgApiKey = "20890385-997b58abe422f53e03d97cdbf";
 
 //where we will store the img array response
-app.imgArray = [];
+app.responseArray1 = [];
+app.responseArray2 = [];
+app.imgArray1 = [];
+app.imgArray2 = [];
 app.selectedPic = {};
 
+
+//HERE IS OUR INITAL SUBMIT
+// event listeners for thedrop down
+app.submitImg1 = () => {
+    document.querySelector(`#cities1`).addEventListener('change', function() {
+        let query = this.value;
+    });
+}
+
+app.submitImg2 = () => {
+    document.querySelector(`#cities2`).addEventListener('change', function() {
+        app.query2 = this.value;
+    });
+}
+
 //create a method to get the dataset from the api
-app.getPics = (query) => {
+app.getPic1 = (query) => {
     //here we use the URL constructor to use our URL and set our search parameters to include in our endpoint
     const url = new URL(app.imgApiUrl);
     url.search = new URLSearchParams({
@@ -30,53 +48,101 @@ app.getPics = (query) => {
         //wait for the JSOn response and log out readable data in json format
         .then((jsonResponse) => {
             //finally we use our built showPics method and pass it our readable json data as an parameter
-            app.makeArray(jsonResponse);
+            app.responseArray1 = jsonResponse;
+        })
+}
+
+app.getPic2 = (query) => {
+    //here we use the URL constructor to use our URL and set our search parameters to include in our endpoint
+    const url = new URL(app.imgApiUrl);
+    url.search = new URLSearchParams({
+        //passing in the api key
+        key: app.imgApiKey,
+        //test query
+        q: query,
+        //only one page of results
+        page: 1
+    })
+    fetch(url)
+        .then((response) => {
+            //parse this response in JSON
+            //return JSON response so that it can be used in the next function
+            return response.json();
+        })
+        //wait for the JSOn response and log out readable data in json format
+        .then((jsonResponse) => {
+            //finally we use our built showPics method and pass it our readable json data as an parameter
+            app.responseArray2 = jsonResponse;
         })
 }
 
 
-app.makeArray = (finalResponse) => {
-    //obtain array
-    let results = finalResponse.hits;
+
+
+
+app.makeArray1 = (returnedArray1) => {
     // push the first 20 results onto the empty array
     for (i = 0; i < 20; i++) {
-        app.imgArray.push(results[i]);
+        app.imgArray1.push(returnedArray1[i]);
     }
     //Here we will pick a random index number using the randomizer function declared below
-    app.randomPics(app.imgArray);
+    app.randomPic1(returnedArray1[i]);
 }
 
+app.makeArray2 = (returnedArray2) => {
+    //obtain array
+    let results = array.hits;
+    // push the first 20 results onto the empty array
+    for (i = 0; i < 20; i++) {
+        app.imgArray2.push(results[i]);
+    }
+    //Here we will pick a random index number using the randomizer function declared below
+    app.randomPic2(app.imgArray2);
+    console.log(app.imgArray2);
+}
+
+
 //function to obtain random image
-app.randomPics = (array) => {
-    let randomNum1 = Math.floor(Math.random() * 20);
-    app.randomImg1 = array[randomNum1];
+app.randomPic1 = (newArray) => {
+    let randomNum = Math.floor(Math.random() * 20);
 
-    let randomNum2 = Math.floor(Math.random() * 20);
-    app.randomImg2 = array[randomNum2];
+    //app.showPic1(newArray[randomNum]);
+}
 
-    app.showPics(app.randomImg1, app.randomImg2);
+app.randomPic2 = (array) => {
+    let randomNum = Math.floor(Math.random() * 20);
+
+    app.showPic2(array[randomNum]);
 }
 
 
 
 // here will be our function to display the img
-app.showPics = (imgObject1, imgObject2) => {
+app.showPic1 = (imgObject1) => {
     // querying the doc and find the first div
     const divOne = document.querySelector('#localOne');
     divOne.innerHTML = '';
-    // query to find the second div 
-    const divTwo = document.querySelector('#localTwo');
-    divTwo.innerHTML = '';
-
-
     //here we create the first img element
     const image1 = document.createElement('img');
     image1.src = imgObject1.webformatURL;
 
+    //append the new child img element to the parent div
+    divOne.appendChild(image1);
+    //imgElement.src = picSelect.imageURL;
+    //console.log(imgElement);
+    // console.log(divOne);
+    // console.log(divTwo);
+}
+
+// here will be our function to display the img
+app.showPic2 = (imgObject2) => {
+    // query to find the second div 
+    const divTwo = document.querySelector('#localTwo');
+    divTwo.innerHTML = '';
+
     const image2 = document.createElement('img');
     image2.src = imgObject2.webformatURL;
     //append the new child img element to the parent div
-    divOne.appendChild(image1);
     divTwo.appendChild(image2);
     //imgElement.src = picSelect.imageURL;
     //console.log(imgElement);
@@ -84,16 +150,12 @@ app.showPics = (imgObject1, imgObject2) => {
     // console.log(divTwo);
 }
 
-// event listeners for the drop down
-app.submitImg = () => {
-    document.querySelector(`#victoria`).addEventListener('change', function() {
-        app.getPics(this.value);
-    });
-    document.querySelector(`#victoria`).addEventListener('change', function() {
-        app.getPics(this.value);
-    });
+app.getFirstImg = () => {
+    app.submitImg1();
+    app.getPic1(app.query1);
+    app.makeArray1(app.responseArray1);
+    app.randomPic1(app.imgArray1);
 }
-
 
 //creating an init method
 //first the function that gets pics
@@ -155,7 +217,7 @@ app.submitting = () => {
     });
 }
 
-app.getMovieValue = () =>{
+app.getMovieValue = () => {
     const selected = document.getElementById("movieList");
     const inputValue = selected.value;
     const imgElement = document.getElementById("poster")
@@ -178,8 +240,7 @@ app.showFinal = () => {
 // initializing fetch api to get data
 app.init = () => {
     app.getMovie();
-    app.getPics(`victoria`);
-    app.submitImg();
+    app.getFirstImg();
     app.submitting();
     app.showFinal();
 }

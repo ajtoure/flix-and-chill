@@ -171,6 +171,7 @@ app.showFinal = () => {
         final.style.display = "block";
         final.style.animation = "showup 3.6s ease-in-out forwards";
         initial.style.display = "none";
+        movieSubmit.style.display ='none'
     });
 }
 

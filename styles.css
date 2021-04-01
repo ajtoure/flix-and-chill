@@ -481,6 +481,24 @@ span{
     justify-content: center;
 }
 
+.leftPerson img{
+    width: 55%;
+    height: 60%;
+    position: absolute;
+    bottom: -2%;
+    left: 39%;
+    z-index: 2;
+}
+
+.rightPerson img{
+    width: 55%;
+    height: 60%;
+    position: absolute;
+    bottom: 0%;
+    left: 8%;
+    z-index: 2;
+}
+
 footer {
     height: 10vh;
     background: #68B0AB;
@@ -595,32 +613,11 @@ footer {
     height: 243px;
     border-left: 10px #804C36 solid;
 }
+
 .leftPerson{
     position: relative;
     height: 100%;
     width: 100%;
-}
-
-.leftHead {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    background: white;
-    border-radius: 50%;
-    bottom: 27%;
-    left: 51%;
-    z-index: 2;
-}
-
-.leftBody{
-    position: absolute;
-    width: 200px;
-    height: 250px;
-    background: black;
-    bottom: 0;
-    left: 47%;
-    border-top-left-radius: 25%;
-    border-top-right-radius: 25%;
 }
 
 .rightPerson{

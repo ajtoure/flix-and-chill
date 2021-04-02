@@ -15,8 +15,8 @@ app.imgArray2 = [];
 //HERE IS OUR INITAL SUBMIT
 // event listeners for thedrop down
 app.submitImg1 = () => {
-    document.querySelector(`#cities1`).addEventListener('change', function() {
-        app.getPic1(this.value);
+    document.querySelector(`#victoria`).addEventListener('change', function() {
+        console.log(this.value);
     });
 }
 

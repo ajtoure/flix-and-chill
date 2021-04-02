@@ -407,7 +407,7 @@ h2 {
     position: relative;
     ;
     border-radius: 40px;
-    background: white;
+    background-color: #EBF3F4;
 }
 
 .optionsContainer {
@@ -423,8 +423,7 @@ h2 {
     background: #EBF3F4;
 }
 
-
-.optionsContainer h3{
+.optionsContainer h3 {
     font-size: 26px;
 }
 
@@ -482,12 +481,11 @@ span {
     border-radius: 20px;
 }
 
-
 .firstLocation {
     text-align: center;
 }
 
-.firstLocation select{
+.firstLocation select {
     width: 50%;
     border: 1px solid #056A72;
     border-radius: 20px;
@@ -495,7 +493,7 @@ span {
     border-radius: 20px;
 }
 
-.secondLocation select{
+.secondLocation select {
     width: 50%;
     border: 1px solid #056A72;
     border-radius: 20px;
@@ -503,10 +501,10 @@ span {
     border-radius: 20px;
 }
 
- select:hover ,
- select:focus {
+select:hover,
+select:focus {
     cursor: pointer;
-    border:2.5px solid #056A72;
+    border: 2.5px solid #056A72;
 }
 
 .secondLocation {
@@ -523,8 +521,7 @@ span {
     justify-content: center;
 }
 
-
-.leftPerson img{
+.leftPerson img {
     width: 65%;
     height: 60%;
     position: absolute;
@@ -533,7 +530,7 @@ span {
     z-index: 2;
 }
 
-.rightPerson img{
+.rightPerson img {
     width: 65%;
     height: 60%;
     position: absolute;
@@ -568,7 +565,7 @@ footer {
 
 .left {
     width: 50%;
-    background: #FB7C64;
+    background: #e8f48c;
     height: 100%;
 }
 
@@ -577,16 +574,46 @@ footer {
     bottom: 0;
 }
 
+.leftImgContainer {
+    width: 75%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.left img {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    padding: 70% 0 0 0;
+    margin: 0;
+    display: block;
+}
+
 .right h3 {
     position: absolute;
     bottom: 0;
     right: 0;
 }
 
+.rightImgContainer {
+    width: 75%;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .right {
     width: 50%;
     background: #9AD3BC;
     height: 100%;
+}
+
+.right img {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    padding: 70% 0 0 0;
+    margin: 0;
+    transform: scalex(-1);
 }
 
 .leftWindow {
@@ -665,15 +692,11 @@ footer {
     width: 100%;
 }
 
-
-
 .rightPerson {
     position: relative;
     height: 100%;
     width: 100%;
 }
-
-
 
 .tv {
     background: #000;

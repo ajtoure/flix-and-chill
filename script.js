@@ -92,7 +92,7 @@ app.submitImg2 = () => {
     document.querySelector(`#cities2`).addEventListener('change', function() {
         app.getPic1(this.value);
     });
-
+}
 
 app.showLocation1 = (locationValue) =>{
     console.log(locationValue);

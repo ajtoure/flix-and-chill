@@ -10,11 +10,11 @@ app.responseArray1 = [];
 app.responseArray2 = [];
 app.imgArray1 = [];
 app.imgArray2 = [];
-app.selectedPic = {};
 
 
 //HERE IS OUR INITAL SUBMIT
 // event listeners for thedrop down
+
 // app.submitImg1 = () => {
 //     document.querySelector(`#cities1`).addEventListener('change', function() {
 //         app.getPic1(this.value);

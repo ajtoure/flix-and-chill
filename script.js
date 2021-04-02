@@ -14,17 +14,17 @@ app.imgArray2 = [];
 
 //HERE IS OUR INITAL SUBMIT
 // event listeners for thedrop down
-app.submitImg1 = () => {
-    document.querySelector(`#victoria`).addEventListener('change', function() {
-        console.log(this.value);
-    });
-}
+// app.submitImg1 = () => {
+//     document.querySelector(`#cities1`).addEventListener('change', function() {
+//         app.getPic1(this.value);
+//     });
+// }
 
-app.submitImg2 = () => {
-    document.querySelector(`#cities2`).addEventListener('change', function() {
-        app.query2 = this.value;
-    });
-}
+// app.submitImg2 = () => {
+//     document.querySelector(`#cities2`).addEventListener('change', function() {
+//         app.query2 = this.value;
+//     });
+// }
 
 //create a method to get the dataset from the api
 app.getPic1 = (query) => {
@@ -36,6 +36,7 @@ app.getPic1 = (query) => {
         //test query
         q: query,
         //only one page of results
+        category: "places",
         page: 1
     })
     fetch(url)
@@ -48,9 +49,8 @@ app.getPic1 = (query) => {
         .then((jsonResponse) => {
             //finally we use our built showPics method and pass it our readable json data as an parameter
             app.responseArray1 = jsonResponse;
-
+            app.makeArray1(jsonResponse);
         })
-    console.log = app.responseArray1;
 }
 
 app.getPic2 = (query) => {
@@ -74,66 +74,89 @@ app.getPic2 = (query) => {
         .then((jsonResponse) => {
             //finally we use our built showPics method and pass it our readable json data as an parameter
             app.responseArray2 = jsonResponse;
+            app.makeArray2(jsonResponse);
         })
 }
 
 
 
+app.submitImg1 = () => {
+    document.querySelector(`#cities1`).addEventListener('change', function() {
+        app.getPic1(this.value);
+    });
+}
 
+app.submitImg2 = () => {
+    document.querySelector(`#cities2`).addEventListener('change', function() {
+        app.getPic1(this.value);
+    });
+}
 
 app.makeArray1 = (returnedArray1) => {
     // push the first 20 results onto the empty array
-    for (i = 0; i < 20; i++) {
-        app.imgArray1.push(returnedArray1[i]);
-    }
-    //Here we will pick a random index number using the randomizer function declared below
-    app.randomPic1(returnedArray1[i]);
-}
+    const randomPic = Math.floor(Math.random() * 5);
 
-app.makeArray2 = (returnedArray2) => {
-    //obtain array
-    let results = array.hits;
-    // push the first 20 results onto the empty array
-    for (i = 0; i < 20; i++) {
-        app.imgArray2.push(results[i]);
-    }
-    //Here we will pick a random index number using the randomizer function declared below
-    app.randomPic2(app.imgArray2);
-    console.log(app.imgArray2);
-}
+    console.log(returnedArray1.hits[randomPic].largeImageURL);
 
 
-//function to obtain random image
-app.randomPic1 = (newArray) => {
-    let randomNum = Math.floor(Math.random() * 20);
-
-    //app.showPic1(newArray[randomNum]);
-}
-
-app.randomPic2 = (array) => {
-    let randomNum = Math.floor(Math.random() * 20);
-
-    app.showPic2(array[randomNum]);
-}
-
-
-
-// here will be our function to display the img
-app.showPic1 = (imgObject1) => {
-    // querying the doc and find the first div
     const divOne = document.querySelector('#localOne');
     divOne.innerHTML = '';
     //here we create the first img element
     const image1 = document.createElement('img');
-    image1.src = imgObject1.webformatURL;
+    image1.src = returnedArray1.hits[randomPic].largeImageURL;
 
     //append the new child img element to the parent div
     divOne.appendChild(image1);
-    //imgElement.src = picSelect.imageURL;
-    //console.log(imgElement);
-    // console.log(divOne);
-    // console.log(divTwo);
 }
+
+app.makeArray2 = (returnedArray2) => {
+    // push the first 20 results onto the empty array
+    const randomPic = Math.floor(Math.random() * 5);
+    console.log(returnedArray2.hits[randomPic].largeImageURL);
+
+
+    const divTwo = document.querySelector('#localTwo');
+    divTwo.innerHTML = '';
+    //here we create the first img element
+    const image2 = document.createElement('img');
+    image2.src = returnedArray2.hits[randomPic].largeImageURL;
+
+    //append the new child img element to the parent div
+    divTwo.appendChild(image2);
+}
+
+
+//function to obtain random image
+// app.randomPic1 = (newArray) => {
+//     let randomNum = Math.floor(Math.random() * 20);
+
+//     //app.showPic1(newArray[randomNum]);
+// }
+
+//app.randomPic2 = (array) => {
+//   let randomNum = Math.floor(Math.random() * 20);
+
+//   app.showPic2(array[randomNum]);
+//}
+
+
+
+// here will be our function to display the img
+//app.showPic1 = (imgObject1) => {
+// querying the doc and find the first div
+//const divOne = document.querySelector('#localOne');
+//divOne.innerHTML = '';
+//here we create the first img element
+//const image1 = document.createElement('img');
+//image1.src = imgObject1.webformatURL;
+
+//append the new child img element to the parent div
+//divOne.appendChild(image1);
+//imgElement.src = picSelect.imageURL;
+//console.log(imgElement);
+// console.log(divOne);
+// console.log(divTwo);
+//}
 
 // here will be our function to display the img
 app.showPic2 = (imgObject2) => {
@@ -152,10 +175,11 @@ app.showPic2 = (imgObject2) => {
 }
 
 app.getFirstImg = () => {
-    app.submitImg1();
+    // app.submitImg1();
     app.getPic1(app.query1);
-    app.makeArray1(app.responseArray1);
-    app.randomPic1(app.imgArray1);
+    app.getPic2(app.query1);
+    // app.makeArray1(app.responseArray1);
+    // app.randomPic1(app.imgArray1);
 }
 
 //creating an init method
@@ -233,6 +257,7 @@ app.init = () => {
     app.getMovie();
     app.getFirstImg();
     app.showFinal();
+    app.submitImg1();
 }
 
 app.init();

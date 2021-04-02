@@ -82,14 +82,23 @@ app.getPic2 = (query) => {
 
 app.submitImg1 = () => {
     document.querySelector(`#cities1`).addEventListener('change', function() {
+        app.showLocation1(this.value);
         app.getPic1(this.value);
     });
 }
+
 
 app.submitImg2 = () => {
     document.querySelector(`#cities2`).addEventListener('change', function() {
         app.getPic1(this.value);
     });
+
+
+app.showLocation1 = (locationValue) =>{
+    console.log(locationValue);
+    const location1 = document.querySelector('#leftLocation');
+    location1.innerHTML = `${locationValue}`
+
 }
 
 app.makeArray1 = (returnedArray1) => {
@@ -248,6 +257,14 @@ app.showFinal = () => {
         final.style.animation = "showup 3.6s ease-in-out forwards";
         initial.style.display = "none";
         movieSubmit.style.display = 'none'
+        const personLeft = document.getElementById("personLeft");
+        const personRight = document.getElementById("personRight");
+        const pink = document.getElementById("pink");
+        const blue = document.getElementById("blue");
+        blue.style.animation = "slidingChair  3.6s ease-in-out forwards";
+        pink.style.animation = "slidingChair  3.6s ease-in-out forwards";
+        personLeft.style.animation = "slidingPerson  3.6s ease-in-out forwards";
+        personRight.style.animation = "slidingPersonRight  3.6s ease-in-out forwards";
     });
 }
 

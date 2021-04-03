@@ -293,7 +293,7 @@ h3 {
 }
 
 .header h1 {
-    font-size: 12vw;
+    font-size: 200px;
     font-family: 'Baloo 2', cursive;
     font-weight: 600;
     color: white;
@@ -756,4 +756,51 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .finalContainer{
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .right{
+        width: 100%;
+    }
+
+    .tv{
+        top: 40%;
+    }
+
+    .tvScreen{
+        padding-bottom: 170px;
+    }
+
+    .leftWindow{
+        height: 200px;
+        left:35px
+    }
+
+    .rightWindow{
+        top: 52%;
+        height: 200px;
+        right: 35px;
+    }
+
+    .personLeft {
+        bottom: 7%;
+    }
+
+    .blue{
+        bottom: 0%;
+    }
+
+    .personRight , .personLeft{
+        height: 65%;
+    }
+
+    .header h1 {
+        font-size: 150px;
+    }
+
 }

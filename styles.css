@@ -348,7 +348,7 @@ h2 {
     justify-content: center;
 }
 
-#initial {
+.initial {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -440,9 +440,9 @@ h2 {
 }
 
 .instructions p {
-    padding: 20px;
+    padding: 10px 20px;
     font-family: Montserrat, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     color: charcoal;
 }
 
@@ -801,6 +801,29 @@ footer {
 
     .header h1 {
         font-size: 150px;
+        width: 100%;
     }
 
+}
+
+@media (max-width: 528px) {
+    .initial{
+        flex-direction: column;
+        justify-content: inherit;
+    }
+
+    .instructions {
+        width: 80%;
+        margin: 25px auto;
+    }
+
+    .optionsContainer{
+        width: 80%;
+    }
+
+    .finalBtn{
+        margin-top: 25px;
+        width: 100px;
+        height: 100px;
+    }
 }

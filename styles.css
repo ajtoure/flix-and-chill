@@ -209,6 +209,9 @@ textarea {
     font: inherit
 }
 
+
+/* General Styles */
+
 details,
 menu {
     display: block
@@ -272,6 +275,9 @@ body {
     overflow-x: hidden;
     background: linear-gradient(rgba(38, 158, 150, 0.85), rgba(218, 233, 232, 0.6));
 }
+
+
+/* HEADER STYLES */
 
 h1,
 h2,
@@ -341,6 +347,9 @@ h2 {
 .slogan h2 {
     padding-top: 40px;
 }
+
+
+/* FORM STYLES */
 
 .dropDown {
     display: flex;
@@ -455,6 +464,9 @@ h2 {
     justify-content: center;
 }
 
+
+/* FINAL LIVING ROOM STYLES */
+
 .blueSofa {
     height: 100%;
     width: 100%;
@@ -550,6 +562,9 @@ select:focus {
     z-index: 1;
     transform: scalex(-1);
 }
+
+
+/* FOOTER STYLES */
 
 footer a {
     text-decoration: none;

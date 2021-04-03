@@ -23,6 +23,7 @@ app.getPic1 = (query) => {
         q: query,
         //only one page of results
         category: "places",
+        order: "popular",
         page: 1
     })
     fetch(url)

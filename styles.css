@@ -788,6 +788,13 @@ footer {
         font-size: 150px;
         width: 100%;
     }
+    .tv {
+        left: 19%;
+        width: 60%;
+    }
+    .tvScreen{
+        padding-bottom: 140px;
+    }
 }
 
 @media (max-width: 528px) {
@@ -807,4 +814,6 @@ footer {
         width: 100px;
         height: 100px;
     }
+    
 }
+

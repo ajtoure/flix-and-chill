@@ -285,7 +285,6 @@ h3 {
     font-family: 'Baloo 2', cursive;
 }
 
-
 .header {
     animation: sliding 2.5s ease-in-out forwards;
     padding: 150px 0px 70px 0px;
@@ -456,12 +455,12 @@ h2 {
     justify-content: center;
 }
 
-.blueSofa{
+.blueSofa {
     height: 100%;
     width: 100%;
 }
 
-.windowContainer{
+.windowContainer {
     width: 42%;
     height: 35%;
     z-index: 2;
@@ -469,7 +468,6 @@ h2 {
     top: 3%;
     left: -3%;
 }
-
 
 span {
     font-weight: bold;
@@ -484,9 +482,8 @@ span {
     width: 50%;
 }
 
-
-.secondLocation select ,
-.firstLocation select ,
+.secondLocation select,
+.firstLocation select,
 .movieOptions select {
     width: 50%;
     border: 1px solid #056A72;
@@ -501,8 +498,8 @@ select:focus {
     border: 2.5px solid #056A72;
 }
 
-.secondLocation ,
-.firstLocation ,
+.secondLocation,
+.firstLocation,
 .movieOptions {
     text-align: center;
 }
@@ -517,8 +514,7 @@ select:focus {
     justify-content: center;
 }
 
-
-.blue{
+.blue {
     width: 85%;
     height: 60%;
     position: absolute;
@@ -526,7 +522,8 @@ select:focus {
     left: 10%;
     z-index: 2;
 }
-.pink{
+
+.pink {
     width: 85%;
     height: 32%;
     position: absolute;
@@ -535,8 +532,7 @@ select:focus {
     z-index: 1;
 }
 
-
-.personLeft{
+.personLeft {
     width: 65%;
     height: 60%;
     position: absolute;
@@ -545,8 +541,7 @@ select:focus {
     z-index: 2;
 }
 
-
-.personRight{
+.personRight {
     width: 65%;
     height: 60%;
     position: absolute;
@@ -556,12 +551,12 @@ select:focus {
     transform: scalex(-1);
 }
 
-footer a{
+footer a {
     text-decoration: none;
     color: #FFFFFF;
 }
 
-footer a:hover{
+footer a:hover {
     border-bottom: 3px solid #FFFFFF;
 }
 
@@ -569,17 +564,15 @@ footer {
     height: 10vh;
     background: #68B0AB;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 20px;
     font-family: 'Baloo 2', cursive;
     font-weight: 600;
     font-size: 26px;
     color: #FFFFFF;
 }
 
-
-
 .final {
-    border: 5px black solid;
+    border: 2px #68B0AB solid;
     height: 900px;
     background: linear-gradient(#000, #000) no-repeat center/10px;
     position: relative;
@@ -606,7 +599,6 @@ footer {
     font-weight: 600;
 }
 
-
 .right h3 {
     position: absolute;
     bottom: 0;
@@ -616,14 +608,11 @@ footer {
     font-weight: 600;
 }
 
-
-
 .right {
     width: 50%;
     background: #9AD3BC;
     height: 100%;
 }
-
 
 .leftWindow {
     border: 5px black solid;
@@ -665,6 +654,12 @@ footer {
     position: relative;
     height: 100%;
     width: 100%;
+}
+
+.leftLocation,
+.rightLocation {
+    font-size: .25em;
+    padding: 20px;
 }
 
 .tv {
@@ -736,7 +731,6 @@ footer {
     }
 }
 
-
 @keyframes showup {
     0% {
         opacity: 0;
@@ -756,72 +750,59 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .finalContainer{
+    .finalContainer {
         flex-direction: column;
     }
-
     .left {
         width: 100%;
     }
-
-    .right{
+    .right {
         width: 100%;
     }
-
-    .tv{
+    .tv {
         top: 40%;
     }
-
-    .tvScreen{
+    .tvScreen {
         padding-bottom: 170px;
     }
-
-    .leftWindow{
+    .leftWindow {
         height: 200px;
-        left:35px
+        left: 35px
     }
-
-    .rightWindow{
+    .rightWindow {
         top: 52%;
         height: 200px;
         right: 35px;
     }
-
     .personLeft {
         bottom: 7%;
     }
-
-    .blue{
+    .blue {
         bottom: 0%;
     }
-
-    .personRight , .personLeft{
+    .personRight,
+    .personLeft {
         height: 65%;
     }
-
     .header h1 {
         font-size: 150px;
         width: 100%;
     }
-
 }
 
 @media (max-width: 528px) {
-    .initial{
+    .initial {
         flex-direction: column;
         justify-content: inherit;
     }
-
     .instructions {
         width: 80%;
         margin: 25px auto;
     }
-
-    .optionsContainer{
+    .optionsContainer {
         width: 80%;
     }
-
-    .finalBtn{
+    .finalBtn {
         margin-top: 25px;
         width: 100px;
         height: 100px;

@@ -81,12 +81,12 @@ app.submitImg2 = () => {
     });
 }
 
-app.showLocation1 = (locationValue) =>{
+app.showLocation1 = (locationValue) => {
     const location1 = document.querySelector('#leftLocation');
     location1.innerHTML = `${locationValue}`
 }
 
-app.showLocation2 = (locationValueTwo) =>{
+app.showLocation2 = (locationValueTwo) => {
     const location2 = document.querySelector('#rightLocation');
     location2.innerHTML = `${locationValueTwo}`
 }

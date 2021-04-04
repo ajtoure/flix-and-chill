@@ -465,21 +465,7 @@ h2 {
 }
 
 
-/* FINAL LIVING ROOM STYLES */
-
-.blueSofa {
-    height: 100%;
-    width: 100%;
-}
-
-.windowContainer {
-    width: 42%;
-    height: 35%;
-    z-index: 2;
-    position: absolute;
-    top: 3%;
-    left: -3%;
-}
+/* OPTIONN SELECT CONTAINER */
 
 span {
     font-weight: bold;
@@ -526,55 +512,20 @@ select:focus {
     justify-content: center;
 }
 
-.blue {
-    width: 85%;
-    height: 60%;
-    position: absolute;
-    bottom: -7%;
-    left: 10%;
+
+/* FINAL CONTAINER STYLES */
+
+.windowContainer {
+    width: 42%;
+    height: 35%;
     z-index: 2;
-}
-
-.pink {
-    width: 85%;
-    height: 32%;
     position: absolute;
-    bottom: 9%;
-    left: 10%;
-    z-index: 1;
+    top: 3%;
+    left: -3%;
 }
 
-.personLeft {
-    width: 65%;
-    height: 60%;
-    position: absolute;
-    bottom: -2%;
-    left: 25%;
-    z-index: 2;
-}
 
-.personRight {
-    width: 65%;
-    height: 60%;
-    position: absolute;
-    bottom: -2%;
-    left: 8%;
-    z-index: 1;
-    transform: scalex(-1);
-}
-
-.final {
-    border: 2px #68B0AB solid;
-    height: 900px;
-    background: linear-gradient(#000, #000) no-repeat center/10px;
-    position: relative;
-    display: none;
-}
-
-.finalContainer {
-    display: flex;
-    height: 100%;
-}
+/* Left Styles */
 
 .left {
     width: 50%;
@@ -591,19 +542,27 @@ select:focus {
     font-weight: 600;
 }
 
-.right h3 {
+.blue {
+    width: 85%;
+    height: 60%;
     position: absolute;
-    bottom: 0;
-    right: 1%;
-    font-size: 2.2vw;
-    font-family: 'Baloo 2', cursive;
-    font-weight: 600;
+    bottom: -7%;
+    left: 10%;
+    z-index: 2;
 }
 
-.right {
-    width: 50%;
-    background: #9AD3BC;
+.blueSofa {
     height: 100%;
+    width: 100%;
+}
+
+.personLeft {
+    width: 65%;
+    height: 60%;
+    position: absolute;
+    bottom: -2%;
+    left: 25%;
+    z-index: 2;
 }
 
 .leftWindow {
@@ -618,6 +577,49 @@ select:focus {
 
 .leftWindow img {
     width: 100%;
+    height: 100%;
+}
+
+.leftPerson {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* Right Styles */
+
+.pink {
+    width: 85%;
+    height: 32%;
+    position: absolute;
+    bottom: 9%;
+    left: 10%;
+    z-index: 1;
+}
+
+.personRight {
+    width: 65%;
+    height: 60%;
+    position: absolute;
+    bottom: -2%;
+    left: 8%;
+    z-index: 1;
+    transform: scalex(-1);
+}
+
+.right h3 {
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+    font-size: 2.2vw;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 600;
+}
+
+.right {
+    width: 50%;
+    background: #9AD3BC;
     height: 100%;
 }
 
@@ -636,12 +638,6 @@ select:focus {
     height: 100%;
 }
 
-.leftPerson {
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-
 .rightPerson {
     position: relative;
     height: 100%;
@@ -652,6 +648,22 @@ select:focus {
 .rightLocation {
     font-size: .25em;
     padding: 20px;
+}
+
+
+/* General Final Container Styles */
+
+.final {
+    border: 2px #68B0AB solid;
+    height: 900px;
+    background: linear-gradient(#000, #000) no-repeat center/10px;
+    position: relative;
+    display: none;
+}
+
+.finalContainer {
+    display: flex;
+    height: 100%;
 }
 
 .tv {
@@ -700,6 +712,9 @@ footer {
     font-size: 26px;
     color: #FFFFFF;
 }
+
+
+/* KEYFRAMES and ANIMATION */
 
 @keyframes sliding {
     0% {
@@ -764,6 +779,9 @@ footer {
     }
 }
 
+
+/* MEDIA QUERIES */
+
 @media (max-width: 768px) {
     .finalContainer {
         flex-direction: column;
@@ -807,7 +825,9 @@ footer {
         left: 19%;
         width: 60%;
     }
-    .tvScreen{
+
+    .tvScreen {
+
         padding-bottom: 140px;
     }
 }

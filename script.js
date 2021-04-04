@@ -1,71 +1,48 @@
-//creating the app namespace
 const app = {};
 
-//creating the url and key variables and namespacing them to the app object
 app.imgApiUrl = "https://pixabay.com/api/";
 app.imgApiKey = "20890385-997b58abe422f53e03d97cdbf";
 
-//where we will store the img array response
 app.responseArray1 = [];
 app.responseArray2 = [];
 app.imgArray1 = [];
 app.imgArray2 = [];
 
-
-//create a method to get the dataset from the api
 app.getPic1 = (query) => {
-    //here we use the URL constructor to use our URL and set our search parameters to include in our endpoint
     const url = new URL(app.imgApiUrl);
     url.search = new URLSearchParams({
-        //passing in the api key
         key: app.imgApiKey,
-        //test query
         q: query,
-        //only one page of results
         category: "places",
         order: "popular",
         page: 1
     })
     fetch(url)
         .then((response) => {
-            //parse this response in JSON
-            //return JSON response so that it can be used in the next function
             return response.json();
         })
-        //wait for the JSOn response and log out readable data in json format
         .then((jsonResponse) => {
-            //finally we use our built showPics method and pass it our readable json data as an parameter
             app.responseArray1 = jsonResponse;
             app.makeArray1(jsonResponse);
         })
 }
 
 app.getPic2 = (query) => {
-    //here we use the URL constructor to use our URL and set our search parameters to include in our endpoint
     const url = new URL(app.imgApiUrl);
     url.search = new URLSearchParams({
-        //passing in the api key
         key: app.imgApiKey,
-        //test query
         q: query,
-        //only one page of results
         page: 1
     })
     fetch(url)
         .then((response) => {
-            //parse this response in JSON
-            //return JSON response so that it can be used in the next function
             return response.json();
         })
-        //wait for the JSOn response and log out readable data in json format
         .then((jsonResponse) => {
-            //finally we use our built showPics method and pass it our readable json data as an parameter
             app.responseArray2 = jsonResponse;
             app.makeArray2(jsonResponse);
         })
 }
-
-
 
 app.submitImg1 = () => {
     document.querySelector(`#cities1`).addEventListener('change', function() {
@@ -73,7 +50,6 @@ app.submitImg1 = () => {
         app.getPic1(this.value);
     });
 }
-
 
 app.submitImg2 = () => {
     document.querySelector(`#cities2`).addEventListener('change', function() {
@@ -114,7 +90,6 @@ app.makeArray2 = (returnedArray2) => {
 
 
 app.showPic2 = (imgObject2) => {
-    // query to find the second div 
     const divTwo = document.querySelector('#localTwo');
     divTwo.innerHTML = '';
 
@@ -128,13 +103,10 @@ app.getFirstImg = () => {
     app.getPic2(app.query1);
 }
 
-
-
-// movie api keys
 app.apiKey = "3e2bae0bdf207133adb310d92315a2ec";
 app.apiMovie = "https://api.themoviedb.org/3/movie/popular"
 
-// gets the movies to display based on a popular list
+
 app.getMovie = () => {
     for (let i = 1; i <= 20; i++) {
         const movieUrl = new URL(app.apiMovie);
@@ -152,7 +124,6 @@ app.getMovie = () => {
     }
 }
 
-//Get the data of the movie and populates options dropdown
 app.displayMovies = (movieData) => {
     const select = document.querySelector('select');
     let counter = 0;
@@ -193,8 +164,6 @@ app.showFinal = () => {
     });
 }
 
-
-// initializing fetch api to get data
 app.init = () => {
     app.getMovie();
     app.getFirstImg();

@@ -825,7 +825,9 @@ footer {
         left: 19%;
         width: 60%;
     }
+
     .tvScreen {
+
         padding-bottom: 140px;
     }
 }
@@ -847,4 +849,6 @@ footer {
         width: 100px;
         height: 100px;
     }
+    
 }
+
